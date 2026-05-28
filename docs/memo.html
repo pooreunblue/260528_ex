@@ -17,16 +17,19 @@
       <!-- 작성 결과물 -->
     </section>
     <script>
+      // TODO 3 : DOM Load하면서 LocalStorage에 저장된 내용으로 렌더링
       const writer = document.querySelector("#writer");
       const board = document.querySelector("#board");
       writer.addEventListener("submit", (event) => {
         event.preventDefault(); // 기본 폼 작업 X
         const formData = new FormData(event.target);
+        // TODO 2 : LocalStorage 저장
         const text = formData.get("text");
         console.log("text", text);
         const memo = document.createElement("p");
         memo.textContent = text;
         board.append(memo);
+        // TODO 1 : 삭제 버튼
       });
     </script>
   </body>
